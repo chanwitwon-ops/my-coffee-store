@@ -4,6 +4,7 @@
 
 | วันที่ | เอกสาร | หัวข้อ | สถานะ |
 |---|---|---|---|
+| 2026-08-03 | [[01-spec/20260803-04-audit-log-pdpa-compliance|20260803-04-audit-log-pdpa-compliance]] | การเก็บ Audit Log และการปฏิบัติตาม PDPA สำหรับข้อมูลพนักงาน (Audit Logging & PDPA Compliance — Employee Data) | Confirmed |
 | 2026-08-03 | [[01-spec/20260803-03-low-stock-alert|20260803-03-low-stock-alert]] | ระบบแจ้งเตือนวัตถุดิบใกล้หมดสต็อก (Low Stock Alert) | Confirmed |
 | 2026-08-03 | [[01-spec/20260803-02-drink-sweetness-level|20260803-02-drink-sweetness-level]] | ตัวเลือกระดับความหวานของเครื่องดื่ม (Drink Sweetness Level Option) | Confirmed |
 | 2026-08-03 | [[01-spec/20260803-01-dine-in-self-order|20260803-01-dine-in-self-order]] | ระบบสั่งอาหารด้วยตนเองจากโต๊ะ (Dine-in Self-Order System) — รวมแดชบอร์ดพนักงาน | Confirmed |
