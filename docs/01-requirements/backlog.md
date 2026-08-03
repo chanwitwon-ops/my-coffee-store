@@ -4,4 +4,4 @@
 
 | วันที่ | เอกสาร | หัวข้อ | สถานะ |
 |---|---|---|---|
-| 2026-08-03 | [[01-spec/20260803-01-dine-in-self-order|20260803-01-dine-in-self-order]] | ระบบสั่งอาหารด้วยตนเองจากโต๊ะ (Dine-in Self-Order System) | Draft |
+| 2026-08-03 | [[01-spec/20260803-01-dine-in-self-order|20260803-01-dine-in-self-order]] | ระบบสั่งอาหารด้วยตนเองจากโต๊ะ (Dine-in Self-Order System) — รวมแดชบอร์ดพนักงาน | Draft |
