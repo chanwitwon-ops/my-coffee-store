@@ -1,33 +1,35 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+ไฟล์นี้ใช้เป็นแนวทางสำหรับ Claude Code (claude.ai/code) เมื่อเข้ามาทำงานกับโค้ดใน repository นี้
 
-## Repository state
+## สถานะปัจจุบันของ repository
 
-This repository currently contains **no application source code** — only a `docs/` folder that scaffolds the project's lifecycle documentation (in Thai). There is no build system, package manifest, linter, or test runner yet. Do not invent build/lint/test commands; when code is added to this repo, this file should be updated with the real commands at that time.
+ตอนนี้ repository นี้**ยังไม่มีซอร์สโค้ดของแอปพลิเคชัน** — มีเพียงโฟลเดอร์ `docs/` ที่เป็นโครงเอกสารสำหรับวางแผนโปรเจกต์ (เขียนเป็นภาษาไทย) ยังไม่มี build system, package manifest, linter หรือ test runner ใดๆ
 
-## Documentation architecture (`docs/`)
+**อย่าคิดคำสั่ง build/lint/test ขึ้นมาเอง** เมื่อมีการเพิ่มโค้ดจริงเข้ามาใน repo นี้ในอนาคต ให้อัปเดตไฟล์นี้ด้วยคำสั่งที่ใช้งานได้จริงในตอนนั้น
 
-The `docs/` tree encodes a linear project workflow, one numbered top-level folder per stage:
+## โครงสร้างเอกสาร (`docs/`)
+
+โฟลเดอร์ `docs/` ถูกออกแบบให้แทน workflow ของโปรเจกต์แบบเรียงลำดับ โดยแบ่งเป็นโฟลเดอร์หลักที่มีเลขนำหน้า:
 
 ```
-00-archived        deprecated/superseded docs (never delete docs — move them here instead)
+00-archived        เอกสารที่เลิกใช้แล้ว/ถูกแทนที่ (ห้ามลบเอกสารทิ้ง ให้ย้ายมาเก็บไว้ที่นี่แทน)
 01-requirements
-  01-spec          source of truth for what the system must do (features, user stories, business rules, scope)
-  02-plan          roadmap/phases/milestones derived from 01-spec
-  03-task          concrete task breakdown derived from 02-plan
+  01-spec          ต้นทางของความต้องการระบบ (ฟีเจอร์, user story, กฎทางธุรกิจ, ขอบเขตงาน)
+  02-plan          แผนงาน/roadmap/phase ที่แตกมาจาก 01-spec
+  03-task          รายการงานย่อยที่ลงมือทำได้จริง แตกมาจาก 02-plan
 02-design
-  01-prototypes    UI/UX wireframes, mockups, user flow, design system basics
-  02-technical     architecture, DB schema, API design, tech/library choices
+  01-prototypes    ต้นแบบหน้าตา UI/UX, wireframe, mockup, user flow, design system เบื้องต้น
+  02-technical     การออกแบบเชิงเทคนิค (architecture, database schema, API design, เทคโนโลยีที่เลือกใช้)
 03-testing
-  01-test-plan     test cases/scenarios derived from 01-spec + 02-design
-  02-test-result   actual pass/fail results and bugs found against 01-test-plan
-04-retrospectives  lessons learned per phase/sprint, sourced from 02-test-result and 05-log
-05-log             chronological changelog / decision log
+  01-test-plan     แผนการทดสอบ/test case ที่เตรียมไว้ก่อนทดสอบจริง แตกมาจาก 01-spec และ 02-design
+  02-test-result   ผลการทดสอบจริงและบั๊กที่พบ เทียบกับ 01-test-plan
+04-retrospectives  บทเรียนที่ได้หลังจบแต่ละ phase/sprint โดยอ้างอิงจาก 02-test-result และ 05-log
+05-log             บันทึกความเคลื่อนไหว/การตัดสินใจสำคัญของโปรเจกต์ เรียงตามลำดับเวลา
 ```
 
-Each stage's `index.md` states which upstream folder it derives from and which downstream folder its output feeds — treat this as the intended reading/authoring order: `01-requirements` → `02-design` → `03-testing` → `04-retrospectives`, with `05-log` running alongside as a chronological record and `00-archived` as the holding area for anything superseded.
+แต่ละโฟลเดอร์จะมี `index.md` บอกไว้ว่ารับข้อมูลมาจากโฟลเดอร์ไหน และส่งต่อผลลัพธ์ไปที่โฟลเดอร์ไหน — ให้ยึดลำดับนี้เป็นลำดับการอ่าน/เขียนเอกสาร: `01-requirements` → `02-design` → `03-testing` → `04-retrospectives` โดยมี `05-log` ทำงานคู่ขนานไปตลอดในฐานะบันทึกตามเวลา และ `00-archived` เป็นที่เก็บเอกสารที่ถูกแทนที่ไปแล้ว
 
-Cross-references between docs use Obsidian-style wikilinks, e.g. `[[../02-plan/index|02-plan]]`. Preserve this linking style when adding or editing docs so the doc graph stays navigable.
+การอ้างอิงข้ามเอกสารใช้รูปแบบ wikilink สไตล์ Obsidian เช่น `[[../02-plan/index|02-plan]]` — เมื่อเพิ่มหรือแก้ไขเอกสาร ให้รักษารูปแบบการลิงก์นี้ไว้ เพื่อให้เอกสารทั้งหมดยังเชื่อมโยงกันได้
 
-**Convention: never delete a doc outright.** Per `docs/00-archived/index.md`, superseded or cancelled documents/plans should be moved into `00-archived/` rather than removed, to preserve the project's decision history.
+**ข้อตกลง: ห้ามลบเอกสารทิ้งโดยตรง** ตามที่ระบุใน `docs/00-archived/index.md` เอกสารที่ถูกยกเลิกหรือแทนที่แล้ว ให้ย้ายไปเก็บไว้ที่ `00-archived/` แทนการลบทิ้ง เพื่อรักษาประวัติการตัดสินใจของโปรเจกต์ไว้
